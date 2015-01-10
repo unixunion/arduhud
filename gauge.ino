@@ -23,7 +23,7 @@ void setup() {
   //Serial.begin(9600);
 
   TV.begin(NTSC,96,64);
-  TV.select_font(font6x8);
+  TV.select_font(font4x6);
   //intro();
   //TV.clear_screen();
   
@@ -36,19 +36,19 @@ void setup() {
   delay(1000);
   
   //Serial.println("b1");
-  rcsbutton = Button(TV_ptr, 0, 0, 31, 9, " RCS");
+  rcsbutton = Button(TV_ptr, 0, 0, 31, 9, "  RCS");
   delay(200);
   //Serial.println("b2");
-  sasbutton = Button(TV_ptr, 0, 12, 31, 9, " SAS");
+  sasbutton = Button(TV_ptr, 0, 12, 31, 9, "  SAS");
   delay(200);
   //Serial.println("b3");
-  gearbutton = Button(TV_ptr, 0, 24, 31, 9, "gear");
+  gearbutton = Button(TV_ptr, 0, 24, 31, 9, " GEAR");
   delay(200);
   //Serial.println("b4");
-  lightbutton = Button(TV_ptr, 0, 36, 31, 9, "light");
+  lightbutton = Button(TV_ptr, 0, 36, 31, 9, " LIGHT");
   delay(200);
   //Serial.println("b5");
-  brakebutton = Button(TV_ptr, TV.hres()-36, 36, 31, 9, "brake");
+  brakebutton = Button(TV_ptr, TV.hres()-36, 36, 31, 9, " BRAKE");
   delay(200);
 
   hBar = HBar(TV_ptr,(TV_ptr.hres()-80)/2,TV_ptr.vres()-12,80);
