@@ -26,7 +26,7 @@ class HBar
     int _lastvalue;
     int _x;
     int _y;
-    TVout _tv;
+    TVout PROGMEM _tv;
     int _length;
     boolean _new;
     int _text_offset;
