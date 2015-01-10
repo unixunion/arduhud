@@ -7,22 +7,22 @@
 #include "MemoryFree.h"
 
 static TVout TV;
-//TVout& TV_ptr = TV;
+TVout& TV_ptr = TV;
 
 HBar hBar;
 //ViewController vc;
 Button rcsbutton;
 Button sasbutton;
 Button gearbutton;
-//Button lightbutton;
-//Button brakebutton;
+Button lightbutton;
+Button brakebutton;
 
 int test = -112;
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
 
-  TV.begin(NTSC,120,96);
+  TV.begin(NTSC,96,64);
   TV.select_font(font6x8);
   //intro();
   //TV.clear_screen();
@@ -33,14 +33,25 @@ void setup() {
 
   //Serial.print("View Controller Test");
   //vc.test();
+  delay(1000);
   
-  rcsbutton = Button(TV, 0, 0, 20, 9, "RCS");
-  sasbutton = Button(TV, 0, 12, 20, 9, "SAS");
-  gearbutton = Button(TV, 0, 24, 20, 9, "gear");
-  //lightbutton = Button(TV, 0, 36, 20, 9, "light");
-  //brakebutton = Button(TV_ptr, 0, 48, 20, 9, "brake");
-  
-  hBar = HBar(TV,(TV.hres()-80)/2,TV.vres()-12,80);
+  //Serial.println("b1");
+  rcsbutton = Button(TV_ptr, 0, 0, 31, 9, " RCS");
+  delay(200);
+  //Serial.println("b2");
+  sasbutton = Button(TV_ptr, 0, 12, 31, 9, " SAS");
+  delay(200);
+  //Serial.println("b3");
+  gearbutton = Button(TV_ptr, 0, 24, 31, 9, "gear");
+  delay(200);
+  //Serial.println("b4");
+  lightbutton = Button(TV_ptr, 0, 36, 31, 9, "light");
+  delay(200);
+  //Serial.println("b5");
+  brakebutton = Button(TV_ptr, TV.hres()-36, 36, 31, 9, "brake");
+  delay(200);
+
+  hBar = HBar(TV_ptr,(TV_ptr.hres()-80)/2,TV_ptr.vres()-12,80);
   
   
   //TV.draw_rect(0,0,TV.hres()-1,TV.vres()-1,WHITE);
@@ -76,9 +87,11 @@ void loop() {
   hBar.update(hBar.getValue()+(test));
   
   delay(50);
+  TV.draw_rect(TV.hres()-22, 1, 20, 6, BLACK);
+  TV.print(TV.hres()-22, 1, freeMemory());
   
-  Serial.print("freeMemory()=");
-  Serial.println(freeMemory());
+  //Serial.print("freeMemory()=");
+  //Serial.println(freeMemory());
   
 }
 

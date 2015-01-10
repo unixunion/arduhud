@@ -9,24 +9,24 @@ Button::Button() {
   
 }
 
-Button::Button(TVout tv, int x, int y, int w, int h, char* title) {
+Button::Button(TVout& tv, int x, int y, int w, int h, PROGMEM char* title) {
   
-  Serial.println("Creating button");
-  Serial.print("size of title: " );
-  Serial.println(sizeof(title));
+//  Serial.println("Creating button");
+//  Serial.print("size of title: " );
+//  Serial.println(sizeof(title));
   
-  _tv = tv;
+  //_tv = tv;
   _x = x;
   _y = y;
   _w = w;
   _h = h;
   
-  _tv.print(x+2,y+2,title);
-  _tv.draw_rect(x, y, w, h, WHITE);
+  tv.print(x+2,y+2,title);
+  tv.draw_rect(x, y, w, h, WHITE);
   
 }
 
 void Button::toggle() {
-  _tv.draw_rect(_x, _y, _w, _h, WHITE, INVERT);
+  //_tv.draw_rect(_x, _y, _w, _h, WHITE, INVERT);
 }
 

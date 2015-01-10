@@ -9,7 +9,7 @@
 HBar::HBar() {
 }
 
-HBar::HBar(TVout tv, int x, int y, int length)
+HBar::HBar(TVout& tv, int x, int y, int length)
 {
   // some saves for later
   _new = true; // im new! ignore clear last position

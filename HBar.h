@@ -12,7 +12,7 @@ class HBar
 {
   public:
     HBar();
-    HBar(TVout tv, int x, int y, int length);
+    HBar(TVout& tv, int x, int y, int length);
     void update(int value);
     int getValue();
     int getX();
@@ -26,7 +26,7 @@ class HBar
     int _lastvalue;
     int _x;
     int _y;
-    TVout PROGMEM _tv;
+    TVout _tv;
     int _length;
     boolean _new;
     int _text_offset;
