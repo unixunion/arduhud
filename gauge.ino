@@ -31,7 +31,7 @@ void setup() {
  
   //vc = ViewController(TV);
 
-  //Serial.print("View Controller Test");
+  //Serial.print(F("View Controller Test"));
   //vc.test();
   delay(1000);
   
@@ -53,7 +53,9 @@ void setup() {
 
   hBar = HBar(TV_ptr,(TV_ptr.hres()-80)/2,TV_ptr.vres()-12,80);
   
-  
+  TV.select_font(font8x8);
+  TV.print(TV.hres()-48, 1, "RAM:");
+  TV.select_font(font4x6);
   //TV.draw_rect(0,0,TV.hres()-1,TV.vres()-1,WHITE);
   
   //hBar.test();
