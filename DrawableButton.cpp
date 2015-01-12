@@ -2,7 +2,7 @@
 #import "DrawableButton.h"
 #import <TVout.h>
 
-DrawableButton::DrawableButton(){};
+DrawableButton::DrawableButton(){}
 
 DrawableButton::DrawableButton(TVout& tv, unsigned int x, unsigned int y, unsigned int w, unsigned int h, char* title) {
 	_tv = tv;

@@ -17,7 +17,7 @@ View::View(TVout& tv) {
    _tv = tv;
 }
 
-void View::add(Drawable drawableObject) {
+void View::add(Drawable& drawableObject) {
    viewContents[_currentObjects] = drawableObject;
 }
 

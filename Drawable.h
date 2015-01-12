@@ -4,17 +4,15 @@
 
 #ifndef Drawable_h
 #define Drawable_h
-
 #include <TVout.h>
 
 // drawable interface
 class Drawable
 {
   public:
-  	// Drawable();
-  	void draw(); // setup object once normally, or redraw it!
-  	void set(char* value);  // set to a char array
-  	void toggle(); // for buttons
+  	virtual void draw(){}; // setup object once normally, or redraw it!
+  	virtual void set(char* value){};  // set to a char array
+  	virtual void toggle(){}; // for buttons
   protected:
   	int _w;
   	int _h;

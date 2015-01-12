@@ -16,7 +16,7 @@ class View
   public:
    View();
    View(TVout& tv);   
-   void add(Drawable drawableObject);
+   void add(Drawable& drawableObject);
    Drawable viewContents[NUMBER_ITEMS_PER_VIEW];
   private:
     TVout _tv;

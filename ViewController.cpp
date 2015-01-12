@@ -31,6 +31,7 @@ void ViewController::changeView(int viewId) {
 		Drawable d;
 		d = v.viewContents[x];
 		d.draw();
+		//d->draw();
 		//Drawable d =  d.draw();
 	}
 }
