@@ -1,23 +1,25 @@
 /* 
- ViewController library for tv out
+ View library for tv out
 */
 
 #include "Arduino.h"
-#include "ViewController.h"
+#include "View.h"
 #include <TVout.h>
 #include <fontALL.h>
 
 #include "Button.h"
+#include "HBar.h"
 
-ViewController::ViewController() {
-  int views[4];
+View::View() {
+  Button btns[8];
+  HBar hbars[4];
 }
 
-ViewController::ViewController(TVout& tv) {
+View::View(TVout& tv) {
    _tv = tv;
 }
 
-void ViewController::add(Button& b, int viewId) {
+void View::add(Button& b) {
    view[viewId];
   
 }

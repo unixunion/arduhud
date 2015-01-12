@@ -7,30 +7,34 @@
 
 #include "Arduino.h"
 #include <TVout.h>
+#include "Button.h"
 
 class ViewController
 {
   public:
    ViewController();
-   ViewController(TVout tv);
+   ViewController(TVout& tv);
    void changeView(int viewId);
    void draw();
    void test();
+   
+   void add(Button& button, int viewId);
+   
 
   private:
     TVout _tv;
 };
 
-template< typename _Type, size_t _Len > 
-  class MPLArray{
-    public:
-      enum{ 
-        Length 	= _Len,
-        Size 	= sizeof( _Type ) * _Len,
-      };
-      _Type& operator[]( uint16_t i_Index ) { return this->t_Data[ i_Index ]; }
-      operator _Type*(){ return this->t_Data; }
-				
-      _Type t_Data[ Length ];
-};
+//template< typename _Type, size_t _Len > 
+//  class MPLArray{
+//    public:
+//      enum{ 
+//        Length 	= _Len,
+//        Size 	= sizeof( _Type ) * _Len,
+//      };
+//      _Type& operator[]( uint16_t i_Index ) { return this->t_Data[ i_Index ]; }
+//      operator _Type*(){ return this->t_Data; }
+//				
+//      _Type t_Data[ Length ];
+//};
 #endif

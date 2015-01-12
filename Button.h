@@ -12,16 +12,16 @@ class Button
 {
   public:
    Button();
-   Button(TVout& tv, int x, int y, int w, int h, char* title);
+   Button(TVout& tv, unsigned int x, unsigned int y, unsigned int w, unsigned int h, char* title);
    void toggle();
    void update();
    void draw();
   private:
    TVout _tv;
-   int _x;
-   int _y;
-   int _w;
-   int _h;
+   unsigned int _x;
+   unsigned int _y;
+   unsigned int _w;
+   unsigned int _h;
 };
 
 #endif
