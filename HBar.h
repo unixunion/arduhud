@@ -7,26 +7,24 @@
 
 #include "Arduino.h"
 #include <TVout.h>
+#include "Drawable.h"
 
-class HBar
+class HBar : public Drawable
 {
   public:
     HBar();
     HBar(TVout& tv, int x, int y, int length);
-    void update(int value);
+    virtual void set(int value);
+    virtual void draw();
     int getValue();
+    void setValue(int value);
     int getX();
     int getY();
     void test();
-    void setValue(int value);
 
-  private:
-    void draw();
+  protected:
     int _value;
     int _lastvalue;
-    int _x;
-    int _y;
-    TVout _tv;
     int _length;
     boolean _new;
     int _text_offset;
