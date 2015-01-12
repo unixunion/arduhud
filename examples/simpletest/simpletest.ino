@@ -8,10 +8,10 @@ Be sure to put TVout dir in libraries! The default TVoutBeta1 name kind of messe
 #include <TVout.h>
 #include <fontALL.h>
 #include "logo.h"
-#include "HBar.h"
-#include "ViewController.h"
-#include "Button.h"
-#include "MemoryFree.h"
+#include <HBar.h>
+#include <ViewController.h>
+#include <Button.h>
+#include <MemoryFree.h>
 
 static TVout TV;
 TVout& TV_ptr = TV;

@@ -7,25 +7,18 @@
 #include <TVout.h>
 #include <fontALL.h>
 
-#include "Button.h"
-#include "HBar.h"
+#include "Drawable.h"
 
 View::View() {
-  Button btns[8];
-  HBar hbars[4];
+	_currentObjects = 0;
 }
 
 View::View(TVout& tv) {
    _tv = tv;
 }
 
-void View::add(Button& b) {
-   view[viewId];
-  
+void View::add(Drawable drawableObject) {
+   viewContents[_currentObjects] = drawableObject;
 }
 
-void ViewController::test() {
-  Serial.println("testing views...");
-  Button b1 = Button(_tv, 10, 10, 20, 9, "rcs");
-}
 

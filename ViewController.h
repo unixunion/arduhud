@@ -7,7 +7,7 @@
 
 #include "Arduino.h"
 #include <TVout.h>
-#include "Button.h"
+#include "View.h"
 
 class ViewController
 {
@@ -16,25 +16,11 @@ class ViewController
    ViewController(TVout& tv);
    void changeView(int viewId);
    void draw();
-   void test();
-   
-   void add(Button& button, int viewId);
-   
-
-  private:
+   void add(Drawable& drawableObject, int viewId);
+  protected:
+    int currentView; // the current view id
+    View views[3]; // 4 views
     TVout _tv;
 };
 
-//template< typename _Type, size_t _Len > 
-//  class MPLArray{
-//    public:
-//      enum{ 
-//        Length 	= _Len,
-//        Size 	= sizeof( _Type ) * _Len,
-//      };
-//      _Type& operator[]( uint16_t i_Index ) { return this->t_Data[ i_Index ]; }
-//      operator _Type*(){ return this->t_Data; }
-//				
-//      _Type t_Data[ Length ];
-//};
 #endif

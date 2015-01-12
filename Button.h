@@ -5,16 +5,16 @@
 #ifndef Button_h
 #define Button_h
 
-#include "Arduino.h"
 #include <TVout.h>
+
 
 class Button
 {
   public:
    Button();
    Button(TVout& tv, unsigned int x, unsigned int y, unsigned int w, unsigned int h, char* title);
+   void set(char* value);
    void toggle();
-   void update();
    void draw();
   private:
    TVout _tv;

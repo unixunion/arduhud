@@ -6,24 +6,32 @@
 #include "ViewController.h"
 #include <TVout.h>
 #include <fontALL.h>
-
-#include "Button.h"
+#include "View.h"
+#include "Drawable.h"
 
 ViewController::ViewController() {
-  int views[4];
+	currentView = 0;
 }
 
+// Initialize the view and the Tvout object
 ViewController::ViewController(TVout& tv) {
    _tv = tv;
 }
 
-void ViewController::add(Button& b, int viewId) {
-   view[viewId];
-  
+// add a drawable to the view
+void ViewController::add(Drawable& drawableObject, int viewId) {
+   views[viewId].add(drawableObject);
 }
 
-void ViewController::test() {
-  Serial.println("testing views...");
-  Button b1 = Button(_tv, 10, 10, 20, 9, "rcs");
+void ViewController::changeView(int viewId) {
+	_tv.clear_screen();
+	// for drawable in view[index] call .draw();
+	for (int x=0; x<NUMBER_ITEMS_PER_VIEW; x++) {
+		View v = views[viewId];
+		Drawable d;
+		d = v.viewContents[x];
+		d.draw();
+		//Drawable d =  d.draw();
+	}
 }
 
