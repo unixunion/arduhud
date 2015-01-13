@@ -22,6 +22,8 @@ class Drawable
   	TVout _tv;
 };
 
+// typedef std::list<Drawable*> DrawableList;
+
 // typedef std::list<Drawable*> DrawableObject;
 
 // button

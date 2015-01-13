@@ -16,11 +16,13 @@ class View
   public:
    View();
    View(TVout& tv);   
-   void add(Drawable& drawableObject);
-   Drawable viewContents[NUMBER_ITEMS_PER_VIEW];
-  private:
+   void add(Drawable* drawableObject);
+   int count();
+   Drawable* viewContents[NUMBER_ITEMS_PER_VIEW];
+   int _currentObjects;
+  protected:
     TVout _tv;
-    int _currentObjects;
+    
 };
 
 #endif

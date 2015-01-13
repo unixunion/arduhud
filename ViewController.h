@@ -15,12 +15,13 @@ class ViewController
    ViewController();
    ViewController(TVout& tv);
    void changeView(int viewId);
+   void addView(View *view);
    void draw();
-   void add(Drawable& drawableObject, int viewId);
-  protected:
+   void add(Drawable *drawableObject, int viewId);
+   View* views[3]; // 4 views 
+   TVout _tv;
     int currentView; // the current view id
-    View views[3]; // 4 views
-    TVout _tv;
+    
 };
 
 #endif

@@ -7,18 +7,23 @@
 #include <TVout.h>
 #include <fontALL.h>
 
-#include "Drawable.h"
+#include "DrawableButton.h"
 
 View::View() {
 	_currentObjects = 0;
 }
 
 View::View(TVout& tv) {
-   _tv = tv;
+  	_tv = tv;
 }
 
-void View::add(Drawable& drawableObject) {
-   viewContents[_currentObjects] = drawableObject;
+void View::add(Drawable *drawableObject) {
+  	viewContents[_currentObjects] = drawableObject;
+  	_currentObjects++;
+}
+
+int View::count() {
+	return _currentObjects;
 }
 
 
